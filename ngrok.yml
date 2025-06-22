@@ -1,0 +1,7 @@
+version: 2
+authtoken: 2vvqSW4eUIg11ktl2gTCA5dRj45_8949ApbVV5deTeehwY5aE
+tunnels:
+  ci3app:
+    addr: 80
+    proto: http
+    domain: diverse-carefully-vervet.ngrok-free.app

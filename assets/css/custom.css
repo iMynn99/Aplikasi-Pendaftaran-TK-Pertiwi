@@ -1,0 +1,82 @@
+/* Pastikan HTML dan Body mengambil tinggi penuh viewport */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Tinggi footer sekitar 56px di SB Admin 2 default */
+    /* Tambahkan sedikit padding di bawah untuk mencegah konten menutupi footer */
+    padding-bottom: 60px;
+    /* Memberi ruang untuk footer */
+    min-height: 100vh;
+    /* Pastikan body setidaknya setinggi viewport */
+}
+
+/* Flexbox overrides untuk SB Admin 2 */
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Memastikan wrapper setidaknya setinggi viewport */
+}
+
+#content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Memastikan content-wrapper setidaknya setinggi viewport */
+    flex: 1;
+    /* Ini penting: Membuat content-wrapper meregang */
+}
+
+#content {
+    flex-grow: 1;
+    /* Konten utama akan mengambil semua ruang yang tersisa */
+}
+
+/* Gaya untuk footer itu sendiri */
+.sticky-footer {
+    position: absolute;
+    /* Menempatkan footer relatif terhadap HTML */
+    bottom: 0;
+    /* Menempel di bagian bawah */
+    width: 100%;
+    /* Lebar penuh */
+    height: 56px;
+    /* Sesuaikan dengan tinggi aktual footer Anda */
+    display: flex;
+    /* Menggunakan flexbox untuk konten footer */
+    align-items: center;
+    /* Pusatkan secara vertikal */
+    justify-content: center;
+    /* Pusatkan secara horizontal */
+}
+
+/* Pastikan elemen di dalam footer juga terpusat jika menggunakan my-auto */
+.sticky-footer .container,
+.sticky-footer .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Optional: Untuk debugging, Anda bisa menambahkan border sementara */
+/*
+footer {
+    border: 2px solid red !important;
+}
+body {
+    border: 2px solid blue !important;
+}
+#wrapper {
+    border: 2px solid green !important;
+}
+#content-wrapper {
+    border: 2px solid orange !important;
+}
+#content {
+    border: 2px solid purple !important;
+}
+*/
